@@ -6,7 +6,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="lblTypeUser" layoutX="499.0" layoutY="14.0" text="Label" />
+      <Label fx:id="lblTypeUser" layoutX="499.0" layoutY="14.0" text="type" />
       <Button fx:id="btnViewAllReservations" layoutX="52.0" layoutY="95.0" mnemonicParsing="false" text="View all my reservations" />
       <Button fx:id="btnAddReservations" layoutX="52.0" layoutY="233.0" mnemonicParsing="false" text="Add reservation" />
       <Button fx:id="btnReservationsFilterDate" layoutX="52.0" layoutY="142.0" mnemonicParsing="false" text="View filtered reservations by date" />

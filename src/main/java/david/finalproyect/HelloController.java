@@ -1,10 +1,15 @@
 package david.finalproyect;
 
-import data.*;
+import david.finalproyect.classes.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.*;
 
 public class HelloController
@@ -41,7 +46,21 @@ public class HelloController
         {
             if (p.getName().equals(username) && p.getPassword().equals(passwd))
             {
-                System.out.println("Loged");
+                try
+                {
+                    Parent path = FXMLLoader.load(getClass().getResource("menuPerson-view.fxml"));
+                    Scene scene = new Scene(path);
+
+                    Stage primaryStage = new Stage();
+                    primaryStage.setScene(scene);
+                    primaryStage.setTitle("Menu");
+                    primaryStage.show();
+                }
+                catch (IOException message)
+                {
+                    System.err.println("Error al cambiar de escena");
+                }
+
             }
         }
     }
