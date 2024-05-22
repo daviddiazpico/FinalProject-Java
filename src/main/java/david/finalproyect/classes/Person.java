@@ -1,7 +1,5 @@
 package david.finalproyect.classes;
 
-import david.finalproyect.interfaces.IViewAddRemoveReservations;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,7 +10,7 @@ import java.util.Objects;
  * This is an abstract class that implements reservation-related functionality
  * and supports serialization.
  */
-public abstract class Person implements IViewAddRemoveReservations, Serializable {
+public abstract class Person implements Serializable {
 
     /** The type of person (ex., "Member", "Coach"). */
     String type;
@@ -47,7 +45,7 @@ public abstract class Person implements IViewAddRemoveReservations, Serializable
         this.dni = dni;
         this.age = age;
         this.password = password;
-        reservations = new ArrayList<>();
+        reservations = new ArrayList<Reservation>();
     }
 
     /**
@@ -146,32 +144,41 @@ public abstract class Person implements IViewAddRemoveReservations, Serializable
         this.password = password;
     }
 
+    public List<Reservation> getReservations() {
+        return reservations;
+    }
 
     /**
      * Displays the list of reservations.
      * Implementation will be added.
      */
-    public void viewReservations()
+    public String viewReservations()
     {
+        String stringReservation = "";
+        for (Reservation r: reservations)
+        {
+            stringReservation += r + "\n";
+        }
 
+        return stringReservation;
     }
 
     /**
      * Adds a new reservation.
      * Implementation will be added.
      */
-    public void addReservation()
+    public void addReservation(Reservation reservation)
     {
-
+        reservations.add(reservation);
     }
 
     /**
      * Removes existing reservations.
      * Implementation will be added.
      */
-    public void removeReservations()
+    public void removeReservations(Reservation reservation)
     {
-
+        reservations.remove(reservation);
     }
 
     /**
@@ -237,7 +244,7 @@ public abstract class Person implements IViewAddRemoveReservations, Serializable
      *
      * @return The list of loaded Person objects.
      */
-    public static List<Person> load()
+    public static List<Person> load() //??????????
     {
         List<Person> users = new ArrayList<Person>();
 
@@ -255,7 +262,7 @@ public abstract class Person implements IViewAddRemoveReservations, Serializable
         {
             System.err.println("Error with the files");
         }
-        catch (ClassNotFoundException mes)
+        catch (Exception mes)
         {
             System.err.println(mes.getMessage());
         }

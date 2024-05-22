@@ -1,14 +1,14 @@
 package david.finalproyect.classes;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
 /**
  * Represents a reservation made by a person.
  */
-public class Reservation
+public class Reservation implements Comparable<Reservation>
 {
-
     /** The person making the reservation. */
     Person person;
 
@@ -16,19 +16,43 @@ public class Reservation
     int numCourt;
 
     /** The date and time of the reservation. */
-    LocalDateTime dateReservation;
+    LocalDate dateReservation;
 
     /**
      * Constructs a new Reservation object.
      *
      * @param person   The person making the reservation.
-     * @param numCourt The number of the sports court reserved.
+     * @param numCourt The number of the tennis court reserved.
      */
     public Reservation(Person person, int numCourt)
     {
         this.person = person;
         this.numCourt = numCourt;
-        this.dateReservation = LocalDateTime.now();
+        this.dateReservation = LocalDate.now();
+    }
+
+    public Person getPerson() {
+        return person;
+    }
+
+    public void setPerson(Person person) {
+        this.person = person;
+    }
+
+    public int getNumCourt() {
+        return numCourt;
+    }
+
+    public void setNumCourt(int numCourt) {
+        this.numCourt = numCourt;
+    }
+
+    public LocalDate getDateReservation() {
+        return dateReservation;
+    }
+
+    public void setDateReservation(LocalDate dateReservation) {
+        this.dateReservation = dateReservation;
     }
 
     /**
@@ -40,7 +64,7 @@ public class Reservation
     @Override
     public String toString()
     {
-        return person + " - " + numCourt + " - " + dateReservation;
+        return person.getName() + " - " + numCourt + " - " + dateReservation;
     }
 
     /**
@@ -67,5 +91,11 @@ public class Reservation
     public int hashCode()
     {
         return Objects.hash(person, numCourt);
+    }
+
+    @Override
+    public int compareTo(Reservation o)
+    {
+        return this.dateReservation.compareTo(o.dateReservation);
     }
 }
