@@ -13,7 +13,7 @@ import javafx.scene.control.Label;
 import java.util.Collections;
 import java.util.List;
 
-public class ViewReservationOrderedController implements IController
+public class ViewMyReservationsOrderedController implements IController
 {
     Person person;
     @FXML

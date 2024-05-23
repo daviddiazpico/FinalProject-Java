@@ -6,14 +6,13 @@
 
 <AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.MenuAdminController">
    <children>
-      <Label fx:id="lblTypeUser" layoutX="499.0" layoutY="18.0" text="Label" />
-      <Button fx:id="btnViewAllReservations" layoutX="51.0" layoutY="73.0" mnemonicParsing="false" text="View a user's reservations" />
-      <Button fx:id="btnAddReservations" layoutX="51.0" layoutY="177.0" mnemonicParsing="false" text="Add reservation" />
-      <Button fx:id="btnReservationsFilterDate" layoutX="51.0" layoutY="108.0" mnemonicParsing="false" text="View a user's filtered reservations by date" />
-      <Button fx:id="btnReservationsFilterCourtNum" layoutX="51.0" layoutY="143.0" mnemonicParsing="false" text="View a user's filtered reservations by court number" />
-      <Button fx:id="btnExit" layoutX="546.0" layoutY="14.0" mnemonicParsing="false" text="EXIT" />
-      <Button layoutX="360.0" layoutY="73.0" mnemonicParsing="false" text="Remove reservation" />
-      <Button layoutX="360.0" layoutY="108.0" mnemonicParsing="false" text="Add person" />
-      <Button layoutX="360.0" layoutY="143.0" mnemonicParsing="false" text="Remove person" />
+      <Label fx:id="lblTypeUser" layoutX="481.0" layoutY="18.0" text="type" />
+      <Button fx:id="btnViewUserReservations" layoutX="51.0" layoutY="73.0" mnemonicParsing="false" onAction="#viewUserReservations" text="View a user's reservations" />
+      <Button fx:id="btnAddReservations" layoutX="51.0" layoutY="143.0" mnemonicParsing="false" onAction="#addReservations" text="Add reservation" />
+      <Button fx:id="btnViewUserReservationsOrdered" layoutX="51.0" layoutY="108.0" mnemonicParsing="false" onAction="#viewUserReservationsOrderedByField" text="View a user's reservations order by a field" />
+      <Button fx:id="btnLogOut" layoutX="528.0" layoutY="14.0" mnemonicParsing="false" onAction="#logout" text="Log out" />
+      <Button fx:id="btnRemoveReservations" layoutX="360.0" layoutY="73.0" mnemonicParsing="false" onAction="#removeReservations" text="Remove reservation" />
+      <Button fx:id="btnAddPerson" layoutX="360.0" layoutY="108.0" mnemonicParsing="false" onAction="#addPerson" text="Add person" />
+      <Button fx:id="btnRemovePerson" layoutX="360.0" layoutY="143.0" mnemonicParsing="false" onAction="#removePerson" text="Remove person" />
    </children>
 </AnchorPane>

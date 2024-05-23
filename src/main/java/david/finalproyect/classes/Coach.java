@@ -20,6 +20,10 @@ public class Coach extends Person
         super("Coach", name, dni, age, password);
     }
 
+    public Coach(String dni) {
+        super(dni);
+    }
+
     /**
      * Constructs a new empty Coach object.
      * (Default constructor)

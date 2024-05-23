@@ -8,9 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import java.io.IOException;
-
-public class ViewReservationsController implements IController
+public class ViewMyReservationsController implements IController
 {
     Person person;
     @FXML

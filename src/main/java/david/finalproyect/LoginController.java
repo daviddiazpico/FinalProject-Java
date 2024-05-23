@@ -12,6 +12,7 @@ import java.util.*;
 
 public class LoginController implements IController
 {
+    Map<String, Person> users = UsersManager.getInstance().getUsers();
     @FXML
     TextField tfUsername;
     @FXML
@@ -21,22 +22,6 @@ public class LoginController implements IController
     @FXML
     Button btnExit;
 
-    //List<Person> users = Person.load();
-    List<Person> users = CrearUsuarios();
-    public List<Person> CrearUsuarios()
-    {
-        List<Person> users = new ArrayList<Person>();
-        users.add(new Member("Ismael", "dni1", 19, "i1234"));
-        users.add(new Member("Sergi", "dni1", 19, "s1234"));
-        users.add(new Member("Alvaro", "dni1", 18, "a1234"));
-        users.add(new Member("Elvis", "dni1", 20, "e1234"));
-        users.add(new Coach("Jose", "dni1", 22, "j1234"));
-        users.add(new Coach("Bilel", "dni1", 18, "b1234"));
-        users.add(new Admin("David", "dni1", 19, "d1234"));
-
-        return users;
-    }
-
     @FXML
     public void checkData()
     {
@@ -44,15 +29,16 @@ public class LoginController implements IController
         username = tfUsername.getText();
         passwd = tfPassword.getText();
 
-        for (Person person: users)
+        for (Person person: users.values())
         {
             if (person.getName().equals(username) && person.getPassword().equals(passwd))
             {
                 if (person instanceof Admin)
                 {
+                    ((Admin)person).setUsers(users);
                     FXMLLoader loader = Utils.changeScene("menuAdmin-view.fxml", this, btnEnter);
                     MenuAdminController controller = loader.getController();
-                    controller.initialitze(person);
+                    controller.initialitze((Admin)person);
                 }
                 else
                 {
@@ -69,5 +55,9 @@ public class LoginController implements IController
     {
         Stage currentStage = (Stage)this.btnExit.getScene().getWindow();
         currentStage.close();
+        for (Person person: users.values())
+            System.out.println(person);
+        Utils.saveUsersInFile(users);
     }
+
 }

@@ -46,6 +46,14 @@ public abstract class Person implements Serializable {
         this.age = age;
         this.password = password;
         reservations = new ArrayList<Reservation>();
+        reservations.add(new Reservation(this, 3));
+        reservations.add(new Reservation(this, 4));
+    }
+
+    // Constructor to create the people to compare with
+    public Person(String dni)
+    {
+        this.dni = dni;
     }
 
     /**
@@ -179,6 +187,11 @@ public abstract class Person implements Serializable {
     public void removeReservations(Reservation reservation)
     {
         reservations.remove(reservation);
+    }
+
+    public String toStringFileFormat()
+    {
+        return type + ";" + name + ";" + dni + ";" + age + ";" + password;
     }
 
     /**
