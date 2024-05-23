@@ -20,6 +20,10 @@ public class Member extends Person
         super("Member", name, dni, age, password);
     }
 
+    public Member(String dni) {
+        super(dni);
+    }
+
     /**
      * Constructs a new empty Member object.
      * (Default constructor)

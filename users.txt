@@ -1,0 +1,7 @@
+Admin;David;dni6;18;d1234
+Coach;Bilel;dni5;18;b1234
+Coach;Elvis;dni4;20;e1234
+Coach;Pedro;dni10;25;p1234
+Member;Alvaro;dni3;18;a1234
+Member;Sergi;dni2;19;s1234
+Member;Ismael;dni1;19;i1234

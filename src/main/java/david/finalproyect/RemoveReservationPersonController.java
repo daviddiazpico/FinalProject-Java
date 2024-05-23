@@ -6,15 +6,10 @@ import david.finalproyect.classes.Utils;
 import david.finalproyect.interfaces.IController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
-import java.io.IOException;
-
-public class RemoveReservationController implements IController
+public class RemoveReservationPersonController implements IController
 {
     Person person;
     @FXML
@@ -32,6 +27,12 @@ public class RemoveReservationController implements IController
     {
         person.removeReservations(new Reservation(person, Integer.parseInt(tfCourtNumber.getText())));
 
+        comeBackToMenu();
+    }
+
+    @FXML
+    private void comeBackToMenu()
+    {
         FXMLLoader loader = Utils.changeScene("menuPerson-view.fxml", this, btnRemove);
         MenuPersonController controller = loader.getController();
         controller.initialitze(person);

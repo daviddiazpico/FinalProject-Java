@@ -1,17 +1,15 @@
 package david.finalproyect;
 
 import david.finalproyect.classes.Person;
+import david.finalproyect.classes.UsersManager;
 import david.finalproyect.classes.Utils;
 import david.finalproyect.interfaces.IController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
-import java.io.IOException;
+import java.util.Map;
 
 public class MenuPersonController implements IController
 {
@@ -21,11 +19,11 @@ public class MenuPersonController implements IController
     @FXML
     Button btnViewAllReservations;
     @FXML
+    Button btnViewReservationsOrdenedByField;
+    @FXML
     Button btnAddReservations;
     @FXML
-    Button btnReservationsFilterDate;
-    @FXML
-    Button btnReservationsFilterCourtNum;
+    Button btnRemoveReservations;
     @FXML
     Button btnLogout;
 
@@ -36,40 +34,40 @@ public class MenuPersonController implements IController
     }
 
     @FXML
-    private void logout()
+    private void viewMyReservations()
     {
-        Utils.changeScene("login-view.fxml", this, btnLogout);
-    }
-
-    @FXML
-    private void viewAllReservations()
-    {
-        FXMLLoader loader = Utils.changeScene("viewReservations-view.fxml", this, btnLogout);
-        ViewReservationsController controller = loader.getController();
+        FXMLLoader loader = Utils.changeScene("viewMyReservations-view.fxml", this, btnLogout);
+        ViewMyReservationsController controller = loader.getController();
         controller.initialitze(person);
     }
 
     @FXML
-    private void viewReservationOrderedByField()
+    private void viewMyReservationOrderedByField()
     {
-        FXMLLoader loader = Utils.changeScene("viewReservationsOrdered-view.fxml", this, btnLogout);
-        ViewReservationOrderedController controller = loader.getController();
+        FXMLLoader loader = Utils.changeScene("viewMyReservationsOrdered-view.fxml", this, btnLogout);
+        ViewMyReservationsOrderedController controller = loader.getController();
         controller.initialitze(person);
     }
 
     @FXML
     private void addReservation()
     {
-        FXMLLoader loader = Utils.changeScene("addReservation-view.fxml", this, btnLogout);
-        AddReservationController controller = loader.getController();
+        FXMLLoader loader = Utils.changeScene("addReservationPerson-view.fxml", this, btnLogout);
+        AddReservationPersonController controller = loader.getController();
         controller.initialitze(person);
     }
 
     @FXML
     private void removeReservation()
     {
-        FXMLLoader loader = Utils.changeScene("removeReservation-view.fxml", this, btnLogout);
-        RemoveReservationController controller = loader.getController();
+        FXMLLoader loader = Utils.changeScene("removeReservationPerson-view.fxml", this, btnLogout);
+        RemoveReservationPersonController controller = loader.getController();
         controller.initialitze(person);
+    }
+
+    @FXML
+    private void logout()
+    {
+        Utils.changeScene("login-view.fxml", this, btnLogout);
     }
 }

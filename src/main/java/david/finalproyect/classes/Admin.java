@@ -1,43 +1,39 @@
 package david.finalproyect.classes;
 
+import java.util.Map;
+
 /**
  * Represents an administrator of the reservation system.
  */
 public class Admin extends Person
 {
-    /**
-     * Constructs a new Admin object with specified name, age, and password.
-     *
-     * @param name     The name of the administrator.
-     * @param age      The age of the administrator.
-     * @param password The password for the administrator's account.
-     */
+    Map<String, Person> users;
+
     public Admin(String name, String dni, int age, String password) {
         super("Admin", name, dni, age, password);
+        this.users = null;
+    }
+
+    public Map<String, Person> getUsers() {
+        return users;
+    }
+
+    public void setUsers(Map<String, Person> users) {
+        this.users = users;
     }
 
     /**
      * Displays the list of reservations.
      * Implementation will be added in future development.
      */
-    public String viewReservations()
+
+    public void addPerson(Person person)
     {
-        return null;
+        users.put(person.getDni(), person);
     }
 
-    /**
-     * Adds a new reservation to the system.
-     * Implementation will be added in future development.
-     */
-    public void addReservation()
+    public void removePerson(Person person)
     {
-    }
-
-    /**
-     * Removes existing reservations from the system.
-     * Implementation will be added in future development.
-     */
-    public void removeReservations()
-    {
+        users.remove(person.getDni());
     }
 }

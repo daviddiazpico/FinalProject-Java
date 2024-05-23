@@ -7,9 +7,9 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.MenuPersonController">
    <children>
       <Label fx:id="lblTypeUser" layoutX="459.0" layoutY="14.0" text="type" />
-      <Button fx:id="btnViewAllReservations" layoutX="52.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewAllReservations" text="View all my reservations" />
+      <Button fx:id="btnViewAllReservations" layoutX="52.0" layoutY="97.0" mnemonicParsing="false" onAction="#viewMyReservations" text="View all my reservations" />
       <Button fx:id="btnAddReservations" layoutX="52.0" layoutY="186.0" mnemonicParsing="false" onAction="#addReservation" text="Add reservation" />
-      <Button fx:id="btnReservationsFilterDate" layoutX="51.0" layoutY="140.0" mnemonicParsing="false" onAction="#viewReservationOrderedByField" text="View reservations ordered by a field" />
+      <Button fx:id="btnViewReservationsOrdenedByField" layoutX="51.0" layoutY="140.0" mnemonicParsing="false" onAction="#viewMyReservationOrderedByField" text="View reservations ordered by a field" />
       <Button fx:id="btnLogout" layoutX="528.0" layoutY="10.0" mnemonicParsing="false" onAction="#logout" text="Log out" />
       <Button fx:id="btnRemoveReservations" layoutX="52.0" layoutY="227.0" mnemonicParsing="false" onAction="#removeReservation" text="Remove reservation" />
    </children>
