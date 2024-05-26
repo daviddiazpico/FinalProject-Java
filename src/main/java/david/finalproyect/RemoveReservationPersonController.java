@@ -27,8 +27,13 @@ public class RemoveReservationPersonController implements IController
     @FXML
     private void removeReservation()
     {
-        person.removeReservations(new Reservation(person, Integer.parseInt(tfCourtNumber.getText())));
-        comeBackToMenu();
+        int courtNum = Integer.parseInt(tfCourtNumber.getText());
+
+        if (person.getReservations().contains(new Reservation(person, courtNum)))
+        {
+            person.removeReservations(new Reservation(person,courtNum ));
+            comeBackToMenu();
+        }
     }
 
     @FXML

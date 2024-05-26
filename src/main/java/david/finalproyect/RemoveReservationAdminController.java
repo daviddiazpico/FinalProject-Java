@@ -25,15 +25,19 @@ public class RemoveReservationAdminController implements IController
     }
 
     @FXML
-    private void addReservation()
+    private void removeReservation()
     {
         if (admin.getUsers().containsKey(tfDni.getText()))
         {
+            int courtNum = Integer.parseInt(tfCourtNumber.getText());
             Person person = admin.getUsers().get(tfDni.getText());
-            person.removeReservations(new Reservation(person, Integer.parseInt(tfCourtNumber.getText())));
-        }
 
-        comeBackToMenu();
+            if (person.getReservations().contains(new Reservation(person, courtNum)))
+            {
+                person.removeReservations(new Reservation(person, courtNum));
+                comeBackToMenu();
+            }
+        }
     }
 
     @FXML

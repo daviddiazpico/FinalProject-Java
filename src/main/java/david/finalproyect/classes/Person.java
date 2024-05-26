@@ -46,27 +46,6 @@ public abstract class Person implements Serializable {
         this.age = age;
         this.password = password;
         reservations = new ArrayList<Reservation>();
-        reservations.add(new Reservation(this, 3));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 4));
-        reservations.add(new Reservation(this, 9));
-        reservations.add(new Reservation(this, 3));
-        reservations.add(new Reservation(this, 7));
-        reservations.add(new Reservation(this, 5));
-        reservations.add(new Reservation(this, 5));
-        reservations.add(new Reservation(this, 5));
-        reservations.add(new Reservation(this, 5));
-        reservations.add(new Reservation(this, 5));
-        reservations.add(new Reservation(this, 5));
     }
 
     /**
