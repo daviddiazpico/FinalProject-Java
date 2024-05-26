@@ -1,6 +1,5 @@
 package david.finalproyect.classes;
 
-
 import david.finalproyect.interfaces.IController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,8 +11,19 @@ import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Utility class providing common functionalities used across the project.
+ */
 public class Utils
 {
+    /**
+     * Changes the current scene to a new scene specified by the view name.
+     *
+     * @param viewName          The name of the FXML view file.
+     * @param currentController The current controller implementing IController interface.
+     * @param button            The button triggering the scene change.
+     * @return The FXMLLoader instance used to load the new scene.
+     */
     public static FXMLLoader changeScene(String viewName, IController currentController, Button button)
     {
         FXMLLoader loader = null;
@@ -39,9 +49,15 @@ public class Utils
         return loader;
     }
 
-    public static Map<String,Person> readFile() throws IOException
+    /**
+     * Reads user data from a file and returns a map of users.
+     *
+     * @return A map where the key is the user's DNI and the value is the Person object.
+     * @throws IOException If an I/O error occurs while reading the file.
+     */
+    public static Map<String, Person> readFile() throws IOException
     {
-        Map<String,Person> users = new HashMap<String,Person>();
+        Map<String, Person> users = new HashMap<>();
 
         BufferedReader file = null;
         try
@@ -88,7 +104,12 @@ public class Utils
         return users;
     }
 
-    public static void saveUsersInFile(Map<String,Person> users)
+    /**
+     * Saves the user data to a file.
+     *
+     * @param users The map of users to save, where the key is the user's DNI and the value is the Person object.
+     */
+    public static void saveUsersInFile(Map<String, Person> users)
     {
         PrintWriter file = null;
 

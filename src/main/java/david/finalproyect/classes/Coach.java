@@ -20,6 +20,12 @@ public class Coach extends Person
         super("Coach", name, dni, age, password);
     }
 
+    /**
+     * Constructs a new Coach object with only a DNI.
+     * This constructor can be used for comparison purposes.
+     *
+     * @param dni The DNI of the coach.
+     */
     public Coach(String dni) {
         super(dni);
     }

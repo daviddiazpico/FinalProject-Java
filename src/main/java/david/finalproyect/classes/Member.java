@@ -6,7 +6,6 @@ package david.finalproyect.classes;
  */
 public class Member extends Person
 {
-
     /**
      * Constructs a new Member object with specified attributes.
      *
@@ -20,6 +19,12 @@ public class Member extends Person
         super("Member", name, dni, age, password);
     }
 
+    /**
+     * Constructs a new Member object with only a DNI.
+     * This constructor can be used for comparison purposes.
+     *
+     * @param dni The DNI of the member.
+     */
     public Member(String dni) {
         super(dni);
     }

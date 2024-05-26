@@ -50,9 +50,13 @@ public abstract class Person implements Serializable {
         reservations.add(new Reservation(this, 4));
     }
 
-    // Constructor to create the people to compare with
-    public Person(String dni)
-    {
+    /**
+     * Constructs a new Person object with only a DNI.
+     * This constructor can be used for comparison purposes.
+     *
+     * @param dni The DNI of the person.
+     */
+    public Person(String dni) {
         this.dni = dni;
     }
 
@@ -152,51 +156,60 @@ public abstract class Person implements Serializable {
         this.password = password;
     }
 
+    /**
+     * Retrieves the list of reservations associated with the person.
+     *
+     * @return The list of reservations.
+     */
     public List<Reservation> getReservations() {
         return reservations;
     }
 
     /**
      * Displays the list of reservations.
-     * Implementation will be added.
+     *
+     * @return A string representation of the reservations.
      */
-    public String viewReservations()
-    {
+    public String viewReservations() {
         String stringReservation = "";
-        for (Reservation r: reservations)
-        {
+        for (Reservation r : reservations) {
             stringReservation += r + "\n";
         }
-
         return stringReservation;
     }
 
     /**
      * Adds a new reservation.
-     * Implementation will be added.
+     *
+     * @param reservation The reservation to add.
      */
-    public void addReservation(Reservation reservation)
-    {
+    public void addReservation(Reservation reservation) {
         reservations.add(reservation);
     }
 
     /**
-     * Removes existing reservations.
-     * Implementation will be added.
+     * Removes an existing reservation.
+     *
+     * @param reservation The reservation to remove.
      */
-    public void removeReservations(Reservation reservation)
-    {
+    public void removeReservations(Reservation reservation) {
         reservations.remove(reservation);
     }
 
-    public String toStringFileFormat()
-    {
+    /**
+     * Returns a string representation of the person in file format.
+     *
+     * @return A string representation of the person in file format.
+     */
+    public String toStringFileFormat() {
         return type + ";" + name + ";" + dni + ";" + age + ";" + password;
     }
 
     /**
      * Returns a string representation of the person.
      * The format is: DNI - Name - Age
+     *
+     * @return A string representation of the person.
      */
     @Override
     public String toString() {
@@ -225,61 +238,5 @@ public abstract class Person implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hash(dni);
-    }
-
-    /**
-     * Saves a list of Person objects to a file using serialization.
-     *
-     * @param users The list of Person objects to save.
-     */
-    public static void save(List<Person> users)
-    {
-        try (ObjectOutputStream serializer = new ObjectOutputStream(
-                new FileOutputStream("users.dat")))
-        {
-            for (Person p: users)
-            {
-                serializer.writeObject(p);
-            }
-        }
-        catch (IOException mes)
-        {
-            System.err.println("Error with the files");
-        }
-        catch (Exception mes)
-        {
-            System.err.println("Error storing people");
-        }
-    }
-
-    /**
-     * Loads a list of Person objects from a file using deserialization.
-     *
-     * @return The list of loaded Person objects.
-     */
-    public static List<Person> load() //??????????
-    {
-        List<Person> users = new ArrayList<Person>();
-
-        try (ObjectInputStream deserializer = new ObjectInputStream(
-                new FileInputStream("users.dat")))
-        {
-            Person p = (Person)deserializer.readObject();
-            while (p != null)
-            {
-                users.add(p);
-                p = (Person)deserializer.readObject();
-            }
-        }
-        catch (IOException mes)
-        {
-            System.err.println("Error with the files");
-        }
-        catch (Exception mes)
-        {
-            System.err.println(mes.getMessage());
-        }
-
-        return users;
     }
 }
