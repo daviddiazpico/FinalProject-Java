@@ -5,7 +5,6 @@ import david.finalproyect.classes.Person;
 import david.finalproyect.classes.Reservation;
 import david.finalproyect.classes.Utils;
 import david.finalproyect.interfaces.IController;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
