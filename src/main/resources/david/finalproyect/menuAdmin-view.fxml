@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
@@ -10,7 +11,10 @@
    <children>
       <AnchorPane layoutX="300.0" prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: black;">
          <children>
-            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="50.0" layoutY="75.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fitHeight="190.0" fitWidth="250.0" layoutX="25.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/foto_menu.jpg" />
+               </image></ImageView>
          </children>
       </AnchorPane>
       <Label fx:id="lblTypeUser" layoutX="460.0" layoutY="18.0" text="type" textFill="WHITE">
