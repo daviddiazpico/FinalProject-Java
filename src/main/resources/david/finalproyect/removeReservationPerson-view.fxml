@@ -6,19 +6,28 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.RemoveReservationPersonController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.RemoveReservationPersonController">
    <children>
-      <Label layoutX="210.0" layoutY="25.0" text="Remove Reservation">
+      <AnchorPane layoutX="150.0" layoutY="20.0" prefHeight="280.0" prefWidth="300.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="53.0" layoutY="39.0" text="Remove Reservation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="100.0" layoutY="94.0" text="Court number" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfCourtNumber" layoutX="75.0" layoutY="116.0" promptText="(ej. 1)" style="-fx-background-color: white;" />
+            <Button fx:id="btnRemove" layoutX="117.0" layoutY="177.0" mnemonicParsing="false" onAction="#removeReservation" style="-fx-background-color: white; -fx-border-color: white;" text="REMOVE" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="12.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-background-color: black;" text="COME BACK" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="12.0" />
          </font>
-      </Label>
-      <Label layoutX="252.0" layoutY="68.0" text="Court number">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfCourtNumber" layoutX="225.0" layoutY="90.0" />
-      <Button fx:id="btnRemove" layoutX="266.0" layoutY="143.0" mnemonicParsing="false" onAction="#removeReservation" text="REMOVE" />
+      </Button>
    </children>
 </AnchorPane>

@@ -17,7 +17,7 @@ public class AddReservationPersonController implements IController
     @FXML
     Button btnAdd;
     @FXML
-    Button btnVolver;
+    Button btnComeBack;
 
     public void initialitze(Person person)
     {

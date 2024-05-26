@@ -1,7 +1,6 @@
 package david.finalproyect;
 
 import david.finalproyect.classes.Person;
-import david.finalproyect.classes.UsersManager;
 import david.finalproyect.classes.Utils;
 import david.finalproyect.interfaces.IController;
 import javafx.fxml.FXML;
@@ -9,13 +8,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
-import java.util.Map;
-
 public class MenuPersonController implements IController
 {
     Person person;
     @FXML
     Label lblTypeUser;
+    @FXML
+    Label lblWelcome;
     @FXML
     Button btnViewAllReservations;
     @FXML
@@ -31,6 +30,7 @@ public class MenuPersonController implements IController
     {
         this.person = person;
         lblTypeUser.setText(this.person.getType().toUpperCase());
+        lblWelcome.setText("Welcome " + this.person.getName());
     }
 
     @FXML

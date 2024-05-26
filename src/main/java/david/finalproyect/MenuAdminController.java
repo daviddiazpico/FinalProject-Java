@@ -15,6 +15,8 @@ public class MenuAdminController implements IController
     @FXML
     Label lblTypeUser;
     @FXML
+    Label lblWelcome;
+    @FXML
     Button btnViewUserReservations;
     @FXML
     Button btnViewUserReservationsOrdered;
@@ -33,6 +35,7 @@ public class MenuAdminController implements IController
     {
         this.admin = admin;
         lblTypeUser.setText(admin.getType().toUpperCase());
+        lblWelcome.setText("Welcome " + this.admin.getName());
     }
 
     @FXML

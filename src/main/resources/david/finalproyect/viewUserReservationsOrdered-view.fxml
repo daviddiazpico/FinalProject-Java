@@ -5,14 +5,36 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewUserReservationsOrderedController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewUserReservationsOrderedController">
    <children>
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
-      <Button fx:id="btnOrder" layoutX="100.0" layoutY="248.0" mnemonicParsing="false" onAction="#checkChosenField" text="Order" />
-      <ComboBox fx:id="cbmFields" layoutX="46.0" layoutY="187.0" prefHeight="26.0" prefWidth="156.0" promptText="Choose an option" />
-      <Label fx:id="lblReservations" layoutX="300.0" layoutY="84.0" prefHeight="231.0" prefWidth="180.0" />
-      <Label layoutX="82.0" layoutY="90.0" text="DNI of the user" />
-      <TextField fx:id="tfDni" layoutX="49.0" layoutY="123.0" />
+      <AnchorPane prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="btnOrder" layoutX="121.0" layoutY="201.0" mnemonicParsing="false" onAction="#checkChosenField" style="-fx-background-color: white; -fx-border-color: white;" text="ORDER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ComboBox fx:id="cbmFields" layoutX="72.0" layoutY="160.0" prefHeight="26.0" prefWidth="156.0" promptText="Choose an option" style="-fx-background-color: white;" />
+            <Label layoutX="95.0" layoutY="81.0" text="DNI of the user" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDni" layoutX="75.0" layoutY="109.0" promptText="DNI" style="-fx-background-color: white;" />
+            <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-background-color: white; -fx-border-color: white;" text="COME BACK">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblReservations" alignment="TOP_CENTER" layoutX="375.0" layoutY="48.0" prefHeight="240.0" prefWidth="150.0" wrapText="true" />
+      <Label layoutX="405.0" layoutY="14.0" text="Reservations">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

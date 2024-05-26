@@ -30,6 +30,7 @@ public class RemovePersonController implements IController
         if (admin.getUsers().containsKey(tfDni.getText()))
         {
             admin.removePerson(new Member(tfDni.getText()));
+            comeBackToMenu();
         }
     }
 

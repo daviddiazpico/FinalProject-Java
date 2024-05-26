@@ -55,8 +55,6 @@ public class LoginController implements IController
     {
         Stage currentStage = (Stage)this.btnExit.getScene().getWindow();
         currentStage.close();
-        for (Person person: users.values())
-            System.out.println(person);
         Utils.saveUsersInFile(users);
     }
 

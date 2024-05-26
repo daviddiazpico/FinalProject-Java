@@ -6,22 +6,37 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.AddReservationAdminController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.AddReservationAdminController">
    <children>
-      <Label layoutX="229.0" layoutY="26.0" text="Add Reservation">
+      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-background-color: black; -fx-border-color: black;" text="COME BACK" textFill="WHITE">
          <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="254.0" layoutY="132.0" text="Court Number">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfCourtNumber" layoutX="225.0" layoutY="160.0" />
-      <Button fx:id="btnAdd" layoutX="277.0" layoutY="202.0" mnemonicParsing="false" onAction="#addReservation" text="ADD" />
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="13.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
-      <Label layoutX="257.0" layoutY="63.0" text="DNI of the user" />
-      <TextField fx:id="tfDni" layoutX="227.0" layoutY="90.0" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <AnchorPane layoutX="159.0" layoutY="31.0" prefHeight="258.0" prefWidth="282.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="63.0" layoutY="19.0" text="Add Reservation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="89.0" layoutY="121.0" text="Court Number" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfCourtNumber" layoutX="65.0" layoutY="143.0" promptText="Court Number" style="-fx-background-color: white;" />
+            <Button fx:id="btnAdd" layoutX="121.0" layoutY="193.0" mnemonicParsing="false" onAction="#addReservation" style="-fx-background-color: white; -fx-border-color: whhite;" text="ADD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="88.0" layoutY="64.0" text="DNI of the user" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDni" layoutX="66.0" layoutY="86.0" promptText="DNI" style="-fx-background-color: white;" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

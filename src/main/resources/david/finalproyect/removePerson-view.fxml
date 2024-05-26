@@ -6,20 +6,31 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.RemovePersonController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.RemovePersonController">
    <children>
-      <Label layoutX="231.0" layoutY="22.0" text="Remove Person">
+      <AnchorPane layoutX="173.0" layoutY="41.0" prefHeight="238.0" prefWidth="254.0" style="-fx-background-color: black;">
+         <children>
+            <Label layoutX="54.0" layoutY="24.0" text="Remove Person" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="74.0" layoutY="84.0" text="DNI of the user" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDni" layoutX="53.0" layoutY="106.0" promptText="DNI" style="-fx-background-color: white;" />
+            <Button fx:id="btnRemove" layoutX="94.0" layoutY="161.0" mnemonicParsing="false" onAction="#removePerson" style="-fx-background-color: white; -fx-border-color: white;" text="REMOVE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-background-color: black;" text="Come Back" textFill="WHITE">
          <font>
-            <Font size="20.0" />
-         </font>
-      </Label>
-      <Label layoutX="286.0" layoutY="77.0" text="DNI">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfDni" layoutX="225.0" layoutY="99.0" />
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
-      <Button fx:id="btnRemove" layoutX="268.0" layoutY="154.0" mnemonicParsing="false" onAction="#removePerson" text="REMOVE" />
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

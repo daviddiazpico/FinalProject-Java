@@ -15,7 +15,9 @@ public class RemoveReservationPersonController implements IController
     @FXML
     TextField tfCourtNumber;
     @FXML
-    public Button btnRemove;
+    Button btnRemove;
+    @FXML
+    Button btnComeBack;
 
     public void initialitze(Person person)
     {
@@ -26,7 +28,6 @@ public class RemoveReservationPersonController implements IController
     private void removeReservation()
     {
         person.removeReservations(new Reservation(person, Integer.parseInt(tfCourtNumber.getText())));
-
         comeBackToMenu();
     }
 

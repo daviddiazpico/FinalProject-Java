@@ -4,12 +4,27 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewMyReservationsOrderedController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewMyReservationsOrderedController">
    <children>
-      <Label fx:id="lblReservations" layoutX="300.0" layoutY="72.0" prefHeight="234.0" prefWidth="170.0" />
-      <ComboBox fx:id="cmbFields" layoutX="43.0" layoutY="93.0" prefWidth="150.0" promptText="Choose an option" />
-      <Button fx:id="btnOrder" layoutX="92.0" layoutY="204.0" mnemonicParsing="false" onAction="#checkChosenField" text="Order" />
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
+      <AnchorPane prefHeight="320.0" prefWidth="300.0" style="-fx-background-color: black;">
+         <children>
+            <ComboBox fx:id="cmbFields" layoutX="70.0" layoutY="115.0" prefHeight="26.0" prefWidth="158.0" promptText="CHOOSE AN OPTION" style="-fx-background-color: white;" />
+            <Button fx:id="btnOrder" layoutX="121.0" layoutY="169.0" mnemonicParsing="false" onAction="#checkChosenField" style="-fx-background-color: white;" text="ORDER">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
+      <Label fx:id="lblReservations" alignment="TOP_CENTER" layoutX="375.0" layoutY="43.0" prefHeight="234.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-background-color: white;" text="Come Back">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

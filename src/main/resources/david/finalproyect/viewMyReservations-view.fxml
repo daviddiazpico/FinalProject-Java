@@ -3,10 +3,24 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewMyReservationsController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.ViewMyReservationsController">
    <children>
-      <Label fx:id="lblReservations" layoutX="206.0" layoutY="87.0" prefHeight="212.0" prefWidth="158.0" />
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
+      <AnchorPane layoutX="145.0" layoutY="22.0" prefHeight="238.0" prefWidth="310.0" style="-fx-background-color: black;">
+         <children>
+            <Label fx:id="lblReservations" alignment="TOP_CENTER" layoutX="64.0" layoutY="15.0" prefHeight="208.0" prefWidth="182.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" style="-fx-border-color: black; -fx-background-color: black;" text="Come Back" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button layoutX="195.0" layoutY="272.0" mnemonicParsing="false" text="Button" />
+      <Button layoutX="336.0" layoutY="272.0" mnemonicParsing="false" text="Button" />
    </children>
 </AnchorPane>

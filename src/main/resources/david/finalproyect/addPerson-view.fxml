@@ -7,44 +7,56 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="320.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.AddPersonController">
+<AnchorPane prefHeight="320.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="david.finalproyect.AddPersonController">
    <children>
-      <Label layoutX="249.0" layoutY="21.0" text="Add Person">
+      <AnchorPane layoutX="56.0" layoutY="35.0" prefHeight="275.0" prefWidth="488.0" style="-fx-background-color: black;">
+         <children>
+            <Button fx:id="btnAdd" layoutX="226.0" layoutY="237.0" mnemonicParsing="false" onAction="#addPerson" style="-fx-background-color: white; -fx-border-color: white;" text="ADD">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="tfPassword" layoutX="173.0" layoutY="193.0" promptText="Password" style="-fx-background-color: white;" />
+            <Label layoutX="215.0" layoutY="171.0" text="Password" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <Label layoutX="190.0" layoutY="7.0" text="Add Person" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfAge" layoutX="303.0" layoutY="134.0" promptText="Age" style="-fx-background-color: white;" />
+            <Label layoutX="364.0" layoutY="113.0" text="Age" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfName" layoutX="35.0" layoutY="134.0" promptText="Name" style="-fx-background-color: white;" />
+            <Label layoutX="88.0" layoutY="113.0" text="Name" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="cbmType" layoutX="36.0" layoutY="60.0" prefWidth="150.0" promptText="Choose a Type" style="-fx-background-color: white;" />
+            <Label layoutX="94.0" layoutY="37.0" text="Type" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfDni" layoutX="303.0" layoutY="60.0" promptText="DNI" style="-fx-background-color: white;" />
+            <Label layoutX="364.0" layoutY="37.0" text="DNI" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="btnComeBack" layoutX="8.0" layoutY="8.0" mnemonicParsing="false" onAction="#comeBackToMenu" prefHeight="22.0" prefWidth="74.0" style="-fx-background-color: black;" text="COME BACK" textFill="WHITE">
          <font>
-            <Font size="20.0" />
+            <Font name="System Bold" size="10.0" />
          </font>
-      </Label>
-      <Label layoutX="81.0" layoutY="61.0" text="Type">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <ComboBox fx:id="cbmType" layoutX="81.0" layoutY="89.0" prefWidth="150.0" />
-      <Label layoutX="358.0" layoutY="61.0" text="DNI">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfDni" layoutX="358.0" layoutY="89.0" />
-      <Label layoutX="81.0" layoutY="142.0" text="Name">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfName" layoutX="81.0" layoutY="170.0" />
-      <Label layoutX="358.0" layoutY="142.0" text="Age">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfAge" layoutX="358.0" layoutY="170.0" />
-      <Label layoutX="268.0" layoutY="196.0" text="Password">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TextField fx:id="tfPassword" layoutX="226.0" layoutY="218.0" />
-      <Button fx:id="btnAdd" layoutX="280.0" layoutY="264.0" mnemonicParsing="false" onAction="#addPerson" text="ADD" />
-      <Button fx:id="btnComeBack" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#comeBackToMenu" text="Come Back" />
+      </Button>
    </children>
 </AnchorPane>
