@@ -16,6 +16,8 @@ import java.util.List;
 public class ViewMyReservationsOrderedController implements IController
 {
     Person person;
+    int numShowedTotal;
+    int numShowedPerRound;
     @FXML
     ComboBox cmbFields;
     @FXML
@@ -23,11 +25,17 @@ public class ViewMyReservationsOrderedController implements IController
     @FXML
     Label lblReservations;
     @FXML
+    Button btnNext;
+    @FXML
+    Button btnBack;
+    @FXML
     Button btnComeBack;
 
     public void initialitze(Person person)
     {
         this.person = person;
+        numShowedTotal = 10;
+        numShowedPerRound = 0;
         cmbFields.getItems().addAll("Date", "Court Number");
     }
 
@@ -61,6 +69,49 @@ public class ViewMyReservationsOrderedController implements IController
     private void showReservations(Person person)
     {
         lblReservations.setText(person.viewReservations());
+    }
+
+    @FXML
+    private void next()
+    {
+        if (person.getReservations().size() >= 10 && numShowedTotal < person.getReservations().size())
+        {
+            numShowedPerRound = 0;
+            String reservations = "";
+            int i = numShowedTotal;
+
+            while (i<numShowedTotal+10 && i < person.getReservations().size())
+            {
+                reservations += person.getReservations().get(i) + "\n";
+                i++;
+                numShowedPerRound++;
+            }
+            numShowedTotal=i;
+
+            lblReservations.setText(reservations);
+        }
+    }
+
+    @FXML
+    private void back()
+    {
+        if (person.getReservations().size() >= 10 && numShowedTotal > 10)
+        {
+            numShowedTotal-=numShowedPerRound+10;
+            numShowedPerRound = 0;
+            String reservations = "";
+            int i = numShowedTotal;
+
+            while (i<numShowedTotal+10 && i < person.getReservations().size())
+            {
+                reservations += person.getReservations().get(i) + "\n";
+                i++;
+                numShowedPerRound++;
+            }
+            numShowedTotal=i;
+
+            lblReservations.setText(reservations);
+        }
     }
 
     @FXML

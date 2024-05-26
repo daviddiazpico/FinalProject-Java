@@ -36,5 +36,15 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
+      <Button fx:id="btnBack" layoutX="379.0" layoutY="280.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnNext" layoutX="470.0" layoutY="280.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: black;" text="NEXT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

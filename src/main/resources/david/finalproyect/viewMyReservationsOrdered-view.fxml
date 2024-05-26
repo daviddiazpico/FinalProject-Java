@@ -18,7 +18,7 @@
             </Button>
          </children>
       </AnchorPane>
-      <Label fx:id="lblReservations" alignment="TOP_CENTER" layoutX="375.0" layoutY="43.0" prefHeight="234.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true">
+      <Label fx:id="lblReservations" alignment="TOP_CENTER" layoutX="375.0" layoutY="43.0" prefHeight="218.0" prefWidth="150.0" textAlignment="CENTER" wrapText="true">
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Label>
@@ -26,5 +26,20 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
+      <Label layoutX="395.0" layoutY="16.0" text="RESERVATIONS">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnBack" layoutX="371.0" layoutY="280.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnNext" layoutX="481.0" layoutY="280.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: black;" text="NEXT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

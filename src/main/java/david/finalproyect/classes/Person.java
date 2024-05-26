@@ -48,6 +48,25 @@ public abstract class Person implements Serializable {
         reservations = new ArrayList<Reservation>();
         reservations.add(new Reservation(this, 3));
         reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 4));
+        reservations.add(new Reservation(this, 9));
+        reservations.add(new Reservation(this, 3));
+        reservations.add(new Reservation(this, 7));
+        reservations.add(new Reservation(this, 5));
+        reservations.add(new Reservation(this, 5));
+        reservations.add(new Reservation(this, 5));
+        reservations.add(new Reservation(this, 5));
+        reservations.add(new Reservation(this, 5));
+        reservations.add(new Reservation(this, 5));
     }
 
     /**
@@ -170,11 +189,25 @@ public abstract class Person implements Serializable {
      *
      * @return A string representation of the reservations.
      */
-    public String viewReservations() {
+    public String viewReservations()
+    {
         String stringReservation = "";
-        for (Reservation r : reservations) {
-            stringReservation += r + "\n";
+
+        if (reservations.size() >= 10)
+        {
+            for (int i = 0; i<10; i++)
+            {
+                stringReservation += reservations.get(i) + "\n";
+            }
         }
+        else
+        {
+            for (Reservation r : reservations)
+            {
+                stringReservation += r + "\n";
+            }
+        }
+
         return stringReservation;
     }
 

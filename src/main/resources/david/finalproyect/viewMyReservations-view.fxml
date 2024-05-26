@@ -20,7 +20,13 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></Button>
-      <Button layoutX="195.0" layoutY="272.0" mnemonicParsing="false" text="Button" />
-      <Button layoutX="336.0" layoutY="272.0" mnemonicParsing="false" text="Button" />
+      <Button fx:id="btnBack" layoutX="210.0" layoutY="280.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: black;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <Button fx:id="btnNext" layoutX="338.0" layoutY="280.0" mnemonicParsing="false" onAction="#next" style="-fx-background-color: black;" text="NEXT" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
    </children>
 </AnchorPane>

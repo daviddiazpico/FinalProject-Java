@@ -27,9 +27,14 @@ public class AddReservationPersonController implements IController
     @FXML
     private void addReservation()
     {
-        person.addReservation(new Reservation(person, Integer.parseInt(tfCourtNumber.getText())));
+        int courtNum = Integer.parseInt(tfCourtNumber.getText());
 
-        comeBackToMenu();
+        if (!(person.getReservations().contains(new Reservation(person, courtNum))))
+        {
+            person.addReservation(new Reservation(person, courtNum));
+
+            comeBackToMenu();
+        }
     }
 
     @FXML
